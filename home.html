@@ -1,7 +1,29 @@
 <html>
-<head><title>test</title></head>
+<head>
+    <title>test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function change_url() {
+            let num_1 = 6;
+            let num_2 = 9;
+            let adder_url
+
+            num_1 = $("#inp1").val();
+            num_2 = $("#inp2").val();
+            adder_url = "cgi-bin/adder?" + num_1 + "&" + num_2;
+            $(".add_btn").attr('href', adder_url);
+            return true;
+        }
+    </script>
+</head>
+
 <body> 
 <img align="middle" src="godzilla.gif">
 Dave O'Hallaron
+<div>
+    <input type = "text" id = "inp1">
+    <input type = "text" id = "inp2">
+    <a href = 'cgi-bin/adder?6&9' class = "add_btn" onclick = "return change_url();" style = "border:2px solid black; border-radius:5px; text-decoration:none; color:black;">add</a>
+</div>
 </body>
 </html>
